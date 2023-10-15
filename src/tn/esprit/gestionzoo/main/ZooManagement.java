@@ -2,6 +2,11 @@ package tn.esprit.gestionzoo.main;
 import java.util.Scanner;
 import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+
 public class ZooManagement {
     //int nbrCages = 20;
     String ZooName = "my Zoo";
@@ -17,7 +22,7 @@ public class ZooManagement {
         System.out.println("le nombre des cages est :  " +ZM.nbrCages);
 */
 
-        Animal a1 = new Animal();
+     /*   Animal a1 = new Animal();
         a1.setFamily("cats");
         a1.setFamily("lion");
         a1.setAge(5);
@@ -41,7 +46,7 @@ public class ZooManagement {
     d'initialiser les objets "Animal" et "Zoo" directement
     lors de leur création en fournissant les valeurs des attributs e
     n un seul appel au constructeur, ce qui simplifie le code et le rend plus lisible.*/
-        System.out.println("**********liste des zoo*********");
+     /*   System.out.println("**********liste des zoo*********");
         z2.displayZoo();
         z1.displayZoo();
 
@@ -51,7 +56,7 @@ public class ZooManagement {
         toString() sur l'objet "z1". Si vous n'avez pas redéfini la méthode
         toString() dans la classe "Zoo, cela affichera l'adresse mémoire de l'objet.*/
 
-        System.out.println("***********Ajout animals zoo1***********");
+      /*  System.out.println("***********Ajout animals zoo1***********");
         //System.out.println(z1.addAnimal(a1));
         //System.out.println(z1.addAnimal(a2));
         System.out.println("***********Ajout animals zoo2***********");
@@ -85,10 +90,57 @@ public class ZooManagement {
         System.out.println(z1.addAnimal(a4));
 
 
+*/
 
+        Animal animal = new Animal();
+        Aquatic aquatic = new Aquatic();
+        Dolphin dolphin = new Dolphin();
+        Penguin penguin = new Penguin();
+        Terrestrial terrestrial = new Terrestrial();
 
+        animal.name = "tigre";
+        animal.age = 5;
+        animal.isMammal = true;
 
+        aquatic.name = "poison";
+        aquatic.age = 3;
+        aquatic.isMammal = false;
+        aquatic.setHabitat("Ocean");
 
+        dolphin.name = "Dolphin";
+        dolphin.age = 10;
+        dolphin.isMammal = false;
+        dolphin.setHabitat("Ocean");
+        dolphin.setSwimmingSpeed(15);
+
+        penguin.name = "Penguin";
+        penguin.age = 8;
+        penguin.isMammal = false;
+        penguin.setHabitat("antratica");
+        penguin.setSwimmingDepth(50);
+
+        terrestrial.name = "elephant";
+        terrestrial.age = 4;
+        terrestrial.isMammal = true;
+        terrestrial.setNbrLegs(4);
+
+        System.out.println(animal.name);
+        System.out.println(aquatic.name);
+        System.out.println(dolphin.name);
+        System.out.println(penguin.name);
+        System.out.println(terrestrial.name);
+
+        System.out.println(aquatic.toString());
+        System.out.println(penguin.toString());
+        System.out.println(dolphin.toString());
+
+        aquatic.swim();
+        penguin.swim();
+        dolphin.swim();
     }
+
+
+
+
 
 }
